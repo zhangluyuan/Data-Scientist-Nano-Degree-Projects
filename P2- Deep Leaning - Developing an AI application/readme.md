@@ -1,11 +1,12 @@
 ## P2- Deep Leaning - Developing an AI application
-Task: Develop a classification APP to identify flower classes based on images using PyTorch
+Task: Develop a classification APP to identify flower classes based on images using PyTorch. <br>
+
 The project contains 3 main parts. 
 ### 1. a jupyter notebook that performs training and prediction; 
-##### load and transform data
+#### load and transform data
 -	load and transform data using torchvision’s dataset and transforms module
 -	create dataloader suing torch.utils.data.DataLoader method
-##### build and train a pre-trained model
+#### build and train a pre-trained model
  - load pretrained torchvision model. I chose ‘vgg19’. 
 - Redefine the last unit of vgg19 the new linear hidden layer of 4096 units with dropout.
 - Output layer has 102 units (102 types of flowers in the data set). Output is LogSoftmax
@@ -14,14 +15,14 @@ The project contains 3 main parts.
 - Training loss, validation loss, and validation accuracy is printed every 40 steps.
 - Test the trained model with test data set. Test accuracy is 0.875.
 - Save the checkpoint. Checkpoint dictionary includes: architecture name, class_to_idx, epochs, learning_rate, hidden_units, state_dict, optimizer, classifier.
-##### Re-build a model from the saved checkpoint
+#### Re-build a model from the saved checkpoint
 - load checkpoint with torch.load,
 - load pre-trained model with the model name from checkpoint and torchvision.models
 - change last unit of the model to the classifier defined in checkpoint
 - load state_dict from checkpoint to the model
 - load class_to_idx from checkpoint to model.class_to_indx
 - return the model for prediction
-##### Predict a flower image with the rebuilt model
+#### Predict a flower image with the rebuilt model
 - Pre-process image using PIL’s Image model:  resize to 256 pixel,crop to 224x224, convert image to numpy array, normalized pixel values to 1, then standard scale pixel values using torchvision models’ expected mean and std, and finally reorder dimensions by moving color channel to the first dimension (color channel is the last dimension in Image object)
 - Run the model for the processed image, and extract the top 5 categories. Convert the categories by mapping model index to classes, then classes to flower names. 
 - Print out the flower image with its name, together with the top 5 predictions with the category names and probabilities in bars. 
