@@ -1,5 +1,6 @@
 ## P3- Unsupervised Learning – Identify Customer Segments
 Task: apply unsupervised learning techniques to identify segments of the population that form the core customer base for a mail-order sales company in Germany. <br>
+
 Model training is performed on a general population dataset. The general population dataset was cleaned before training. Then the trained model is used to identify customer segments. 
 ### Step 0: Load and explore training data
 -	Load general population data. It has ~ 900,000 records and 85 columns.
