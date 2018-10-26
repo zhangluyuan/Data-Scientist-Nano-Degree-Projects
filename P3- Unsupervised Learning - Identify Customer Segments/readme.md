@@ -15,7 +15,7 @@ Model training is performed on a general population dataset. The general populat
 -	Re-encode categorical features: convert non-numerical categorical features to numerical; drop categorical features that have more than 3 categories. 
 -	Engineer mixed-type features: 2 features contain mixed information. For each feature, I break them into 2 features that encode one information each. The original mixed features are dropped. 
 #### Step 1.3 Create cleaning function
-	A function was created that performs all the above cleaning jobs, including re-encoding missing values, dropping columns, re-encoding categorical features and engineering mixed-type features.  This cleaning function will be used to clean customer data set. 
+A function was created that performs all the above cleaning jobs, including re-encoding missing values, dropping columns, re-encoding categorical features and engineering mixed-type features.  This cleaning function will be used to clean customer data set. 
 ### Step 2: Feature transformation
 #### Step 2.1 Feature scaling
 -	Impute missing values with median
